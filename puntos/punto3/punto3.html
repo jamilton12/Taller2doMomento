@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>punto3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #525252;
+            color: aliceblue;
+        }
+
+    </style>
+</head>
+<body>
+    <p id="parrafo">Click en el parrafo para que cambie de color el fondo</p>
+
+
+    <script>
+        // Obtener el parrafo
+        const $parrafo = document.querySelector('#parrafo');
+        
+        let  caulColor = false 
+
+        let color 
+        let color2
+        // Añadir evento click al parrafo
+        $parrafo.addEventListener('click', function() {
+            caulColor =!caulColor
+            color = caulColor ? 'yellow' : '#525252'
+            color2 = caulColor ? '#525252' : 'aliceblue'
+            $parrafo.style.backgroundColor = color   
+            $parrafo.style.color = color2   
+        });
+    </script>
+</body>
+</html>
