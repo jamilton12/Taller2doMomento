@@ -11,11 +11,14 @@ function filtrarProductosPorCategoria(productos ,categorias) {
 }
 
 function calcularDescuento (productos, descuento) {
-    let productosDescuento = productos.forEach(producto => {
-        let descuentoTotal = descuento / 100
-        return producto.precio * descuentoTotal
+    let productosDescuento = []
+    productos.forEach((producto) => {
+        let descuentoTotal = (producto.precio * descuento) / 100 
+        
+        producto.precio = producto.precio - descuentoTotal     
+        productosDescuento.push(producto)  
     });
-
+    
     return productosDescuento;
 }
 
@@ -30,4 +33,9 @@ let productosFiltrados = filtrarProductosPorCategoria(productos, 'tecnologia')
 
 let productosDescuento = calcularDescuento(productosFiltrados, 10)
 
-let sumarProductos = sumarProductos(productosDescuento)
+let sumaProductos = sumarproductos(productosDescuento)
+
+console.log(productosFiltrados);
+console.log(productosDescuento);
+console.log(sumaProductos);
+
